@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="E.cs" />
+    <Compile Include="Exceptions\ApplicationNetException.cs" />
     <Compile Include="Exceptions\ItemNotFoundException.cs" />
     <Compile Include="Exceptions\UnexpectedValueException.cs" />
     <Compile Include="Extensions\ExceptionExt.cs" />

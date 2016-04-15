@@ -6,9 +6,10 @@ namespace Ays.Extensions
 {
     public static class ExceptionExt
     {
+        #region Public Methods
+
         /// <summary>
         /// Formats exception messages as fallowing:
-        /// 
         /// Exception.Message => (Exception.InnerException.Message; Exception.AnotherInnerException.Message)
         /// </summary>
         public static string GetFormattedMessage(this Exception exception)
@@ -36,5 +37,7 @@ namespace Ays.Extensions
 
             return message;
         }
+
+        #endregion Public Methods
     }
 }

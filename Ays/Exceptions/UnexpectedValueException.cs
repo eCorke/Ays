@@ -7,13 +7,7 @@ namespace Ays.Exceptions
     /// </summary>
     public class UnexpectedValueException : ApplicationException
     {
-        #region Properties
-
-        public object ActualValue { get; }
-
-        #endregion
-
-        #region Constructors
+        #region Public Constructors
 
         public UnexpectedValueException(string message, object actualValue) : base(message)
         {
@@ -25,6 +19,12 @@ namespace Ays.Exceptions
             ActualValue = actualValue;
         }
 
-        #endregion
+        #endregion Public Constructors
+
+        #region Public Properties
+
+        public object ActualValue { get; }
+
+        #endregion Public Properties
     }
 }

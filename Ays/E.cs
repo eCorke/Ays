@@ -1,5 +1,6 @@
 ﻿using Ays.Exceptions;
 using System;
+using System.Net;
 
 namespace Ays
 {
@@ -8,9 +9,42 @@ namespace Ays
     /// </summary>
     public static class E
     {
-        public static ItemNotFoundException ItemNotFound(string message, Exception innerException)
+        #region Public Methods
+
+        public static ApplicationNetException ApplicationNet(string message, Exception innerException = null, HttpStatusCode statusCode = HttpStatusCode.OK)
         {
-            if(innerException == null)
+            W.ArgumentNotEmpty(message, nameof(message));
+
+            if (innerException == null)
+            {
+                return new ApplicationNetException(message, statusCode);
+            }
+            else
+            {
+                return new ApplicationNetException(message, innerException, statusCode);
+            }
+        }
+
+        public static ArgumentException Argument(string message, string argumentName)
+        {
+            W.ArgumentNotEmpty(message, nameof(message));
+            W.ArgumentNotEmpty(argumentName, nameof(argumentName));
+
+            return new ArgumentException(message, argumentName);
+        }
+
+        public static ArgumentNullException ArgumentNull(string argumentName)
+        {
+            W.ArgumentNotEmpty(argumentName, nameof(argumentName));
+
+            return new ArgumentNullException(argumentName);
+        }
+
+        public static ItemNotFoundException ItemNotFound(string message, Exception innerException = null)
+        {
+            W.ArgumentNotEmpty(message, nameof(message));
+
+            if (innerException == null)
             {
                 return new ItemNotFoundException(message);
             }
@@ -22,6 +56,8 @@ namespace Ays
 
         public static UnexpectedValueException UnexpectedValue(string message, object actualValue, Exception innerException = null)
         {
+            W.ArgumentNotEmpty(message, nameof(message));
+
             if (innerException == null)
             {
                 return new UnexpectedValueException(message, actualValue);
@@ -32,19 +68,6 @@ namespace Ays
             }
         }
 
-        public static ArgumentNullException ArgumentNull(string argumentName)
-        {
-            W.ArgumentNotEmpty(argumentName, nameof(argumentName));
-
-            return new ArgumentNullException(argumentName);
-        }
-
-        public static ArgumentException Argument(string message, string argumentName)
-        {
-            W.ArgumentNotEmpty(message, nameof(message));
-            W.ArgumentNotEmpty(argumentName, nameof(argumentName));
-
-            return new ArgumentException(message, argumentName);
-        }
+        #endregion Public Methods
     }
 }

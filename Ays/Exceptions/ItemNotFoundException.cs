@@ -8,15 +8,16 @@ namespace Ays.Exceptions
     /// </summary>
     public class ItemNotFoundException : KeyNotFoundException
     {
+        #region Public Constructors
 
         public ItemNotFoundException(string message) : base(message)
         {
-
         }
 
         public ItemNotFoundException(string message, Exception innerException) : base(message, innerException)
         {
-
         }
+
+        #endregion Public Constructors
     }
 }
