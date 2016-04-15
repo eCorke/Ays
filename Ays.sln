@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ays", "Ays\Ays.csproj", "{6DF89EF1-779A-4CE5-B854-B9023B90BF63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{348936F5-377B-4CAE-B49B-195D09BA15EC}"
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Ays", "NuGet\Ays\Ays.nuproj", "{4688417E-A842-4C77-A073-F8F9770DA568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,15 @@ Global
 		{6DF89EF1-779A-4CE5-B854-B9023B90BF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DF89EF1-779A-4CE5-B854-B9023B90BF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DF89EF1-779A-4CE5-B854-B9023B90BF63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4688417E-A842-4C77-A073-F8F9770DA568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4688417E-A842-4C77-A073-F8F9770DA568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4688417E-A842-4C77-A073-F8F9770DA568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4688417E-A842-4C77-A073-F8F9770DA568}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4688417E-A842-4C77-A073-F8F9770DA568} = {348936F5-377B-4CAE-B49B-195D09BA15EC}
 	EndGlobalSection
 EndGlobal
